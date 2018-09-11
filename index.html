@@ -88,7 +88,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/07/test/" data-id="cjkl3e6cm00025hbb7td505jx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/07/test/" data-id="cjklxpn4p000137bblm4ors58" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,8 +100,8 @@
   
     <article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/19/css/" class="article-date">
-  <time datetime="2016-11-19T02:44:25.000Z" itemprop="datePublished">2016-11-19</time>
+    <a href="/2015/11/19/css/" class="article-date">
+  <time datetime="2015-11-19T02:44:25.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     
   </div>
@@ -112,7 +112,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/css/">CSS 面试题</a>
+      <a class="article-title" href="/2015/11/19/css/">CSS 题集</a>
     </h1>
   
 
@@ -124,13 +124,20 @@
 <li><h4 id="什么是css盒模型？盒模型的种类？"><a href="#什么是css盒模型？盒模型的种类？" class="headerlink" title="什么是css盒模型？盒模型的种类？"></a>什么是css盒模型？盒模型的种类？</h4> css盒模型规定了元素处理元素内容（content），边框（border），内外边距(padding,margin)的方式<br> 盒模型有IE盒子模型和标准W3C盒子模型。<br> box-sizing:border-box;    //IE盒模型，包括content border padding 的值<br> box-sizing:content-box; //标准和模型，只有content<br> box-sizing:inherit; //从父元素继承盒模型方式</li>
 <li><h3 id="css选择符有哪些？哪些可以继承？哪些不可以继承？"><a href="#css选择符有哪些？哪些可以继承？哪些不可以继承？" class="headerlink" title="css选择符有哪些？哪些可以继承？哪些不可以继承？"></a>css选择符有哪些？哪些可以继承？哪些不可以继承？</h3> 选择符有：id(#elementid),类(.classname),标签（div,hi,p,span,table）,相邻（h1+p）,子选择器（ul&gt;li）,后代（li a）,通配符（*），属性（a[rel=”external”]）,伪类（a:hover,li:nth-child(n)）<br> 可继承：font-size,font-family,color<br> 不可继承：border,padding,margin,width,height</li>
 <li><h3 id="css如何计算优先级？"><a href="#css如何计算优先级？" class="headerlink" title="css如何计算优先级？"></a>css如何计算优先级？</h3> 就近原则，同权重情况下以样式定义最近者为准；载入样式以最后载入的定位为准；<br> !important &gt; id &gt; class &gt; tag<br> important 比 内联优先级高</li>
-<li></li>
+<li><h3 id="css3新增伪类？"><a href="#css3新增伪类？" class="headerlink" title="css3新增伪类？"></a>css3新增伪类？</h3> p:first-of-type 选择属于其父元素的首个 <p> 元素的每个 </p><p> 元素。<br> p:last-of-type  选择属于其父元素的最后 </p><p> 元素的每个 </p><p> 元素。<br> p:only-of-type  选择属于其父元素唯一的 </p><p> 元素的每个 </p><p> 元素。<br> p:only-child    选择属于其父元素的唯一子元素的每个 </p><p> 元素。<br> p:nth-child(2)  选择属于其父元素的第二个子元素的每个 </p><p> 元素。<br> :enabled        :disabled 控制表单控件的禁用状态。<br> :checked        单选框或复选框被选中。</p></li>
+<li><h3 id="行内元素，块级元素，空元素有哪些？"><a href="#行内元素，块级元素，空元素有哪些？" class="headerlink" title="行内元素，块级元素，空元素有哪些？"></a>行内元素，块级元素，空元素有哪些？</h3> 行内元素：span，a，b，em，strong，sub，sup，textarea，label等<br> 块级元素：blockquote，address，div，ul，li，dl，h1~h6，p，table，form等<br> 空元素：<br><hr><input><img><link><meta></li>
+<li><h3 id="实现css垂直水平居中？"><a href="#实现css垂直水平居中？" class="headerlink" title="实现css垂直水平居中？"></a>实现css垂直水平居中？</h3> <1>单行文本垂直居中：height和line-height值设置一样<br> <2>文字或者行内元素水平居中：text-align:center<br> <3>块水平居中，垂直居中：<br> ①块宽固定——定义宽度，margin: 0 auto；定义margin-top距离容器顶部1/2<br> ②使用绝对定位 transform:translate(-50%,-50%)；left:50%; top:50%;<br> <4>div模拟表格效果：父块设置display:table；字块设置display:table-cell；同时vertical-<br> align:middle;<br> <5>.parent{position:relative}<br> .child{margin:auto;height: 100px;width: 100px;position: absolute;top: 0; left: 0;<br> bottom: 0; right: 0;}<br> <6>弹性布局（flex）：justify-content:center 水平方向 align-items:center;垂直方向</6></5></4></3></2></1></li>
+<li><h3 id="src和href的区别？"><a href="#src和href的区别？" class="headerlink" title="src和href的区别？"></a>src和href的区别？</h3> href表示超文本引用，用来建立当前元素和文档之间的链接。常用的有link ，a。<br> 例如:<link href="reset.css" rel="stylesheet">浏览器会识别该文档为css文档，并下载该文档<br> ，且不会停止对当前文档的处理，也是建议使用link，而不是@inport的原因<br> src是source的缩写，src指向的内容会嵌入到标签所在的位置。常用的有img，script，iframe。当<br> 浏览器解析到该元素时会暂停浏览器的渲染，知道该资源解析完毕。<br> @import和link区别：<br> @import 为CSS服务；link是为当前的页服务<br> @import是css2.1提出的，老浏览器不兼容。link无此问题<br> 使用js控制dom样式时，只能使用link标签</li>
+<li><h3 id="什么是css-hack"><a href="#什么是css-hack" class="headerlink" title="什么是css hack?"></a>什么是css hack?</h3> 解决针对不同浏览器或者同一浏览器不同版本的样式显示的css code为css hack。<br> css 内部hack，选择器hack，html头部hack。<br> css内部hack：在一些css属性和值前面或后面添加样式浏览器前缀<br> -moz- 火狐    -webkit- chrome和safari    -o- Opera        -ms- IE    标准不加前缀<br> IE6 -或者<em>         IE7 +或者</em>        所有IE !important    所有IE \9<br> IE8+ \0<br> 选择器hack:<em>html  IE6    </em>+html  IE7    :root  IE9<br> 头部hack:&lt;!-[if IE 7]&gt;&lt;![endif]-&gt; 如果是IE7版本    &lt;!-[if lte IE 6]&gt;&lt;![endif]-&gt;如果小于等<br> 于IE6版本</li>
+<li><h3 id="px和em，rem的区别？"><a href="#px和em，rem的区别？" class="headerlink" title="px和em，rem的区别？"></a>px和em，rem的区别？</h3> px:在页面缩放时无法调整使用它作为单位的字体和按钮的大小<br> em:值不是固定的，继承父级元素的字体大小，代表倍数<br> rem:值不固定，始终基于根元素</li>
+<li><h3 id="什么叫优雅降级和渐进增强？"><a href="#什么叫优雅降级和渐进增强？" class="headerlink" title="什么叫优雅降级和渐进增强？"></a>什么叫优雅降级和渐进增强？</h3>渐进增强：一开始针对低版本进行页面构建，完成基本功能。然后再针对高级浏览器进行效果，交<br>互，追加功能达到更好的体验。<br>优雅降级相当于向下兼容：一开始就构建站点的整个功能，然后针对浏览器测试和修复。（比如一<br>开始使用css3构建页面，然后针对各大浏览器hack）</li>
+<li><h3 id="浏览器的内核分别是什么？"><a href="#浏览器的内核分别是什么？" class="headerlink" title="浏览器的内核分别是什么？"></a>浏览器的内核分别是什么？</h3>Trident——IE<br>Gecko——firefox<br>Webkit——safari 和 chrome<br>Presto——Opera</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/19/css/" data-id="cjkl3e6ci00005hbbr05leh1g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css/" data-id="cjklxpn4c000037bb03zo4rpz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +165,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li></ul>
     </div>
   </div>
 
@@ -175,7 +182,7 @@
           </li>
         
           <li>
-            <a href="/2016/11/19/css/">CSS 面试题</a>
+            <a href="/2015/11/19/css/">CSS 题集</a>
           </li>
         
       </ul>
