@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js0" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/07/test/" class="article-date">
-  <time datetime="2018-08-07T09:39:46.000Z" itemprop="datePublished">2018-08-07</time>
+    <a href="/2017/04/05/js0/" class="article-date">
+  <time datetime="2017-04-05T10:59:04.000Z" itemprop="datePublished">2017-04-05</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/07/test/">test</a>
+      <a class="article-title" href="/2017/04/05/js0/">js0.md</a>
     </h1>
   
 
@@ -84,11 +84,138 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="测试页"><a href="#测试页" class="headerlink" title="测试页"></a>测试页</h3>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/07/test/" data-id="cjlxgcy540003fubbem55r9v7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjlxlyqq00002nabb84pkqoml" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/04/css1/" class="article-date">
+  <time datetime="2016-10-04T02:44:25.000Z" itemprop="datePublished">2016-10-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/04/css1/">CSS 题集2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol start="22">
+<li><h3 id="css优化方法？"><a href="#css优化方法？" class="headerlink" title="css优化方法？"></a>css优化方法？</h3><h2 id="加载性能："><a href="#加载性能：" class="headerlink" title="加载性能："></a>加载性能：</h2><pre><code>1.css压缩：将写好的css进行打包压缩，可以减少很多的体积；
+2.css单一样式：当需要下边距和左边距的时候，
+    很多时候选择：margin: top 0 bottom 0;
+    但 margin-bottom: bottom;margin-left: left;执行的效率更高；
+3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一起加载，前者 是等待页面加载完成之后再进行加载;
+</code></pre><h2 id="选择器性能："><a href="#选择器性能：" class="headerlink" title="选择器性能："></a>选择器性能：</h2><pre><code>1.CSS选择符是从右到左进行匹配的。当使用后代选择器的时候，浏览器会遍历所有子元素来确定是否是指定的元素等等；
+2.减少使用通配*规则:如*{} 计算次数惊人！只对需要用到的元素进行选择
+3.尽量少的去对标签进行选择，而是用class 如：#nav li{},可以为li加上nav_item的类名，如下选择.nav_item{}
+4.要去用标签限定ID或者类选择符。如：ul#nav,应该简化为#nav
+5.尽量少的去使用后代选择器，降低选择器的权重值
+6.后代选择器的开销是最高的，尽量将选择器的深度降到最低，最高不要超过三层，更多的使用类来关联每一个标签元素
+7.考虑继承：了解哪些属性是可以通过继承而来的，然后避免对这些属性重复指定规则
+</code></pre><h2 id="渲染性能："><a href="#渲染性能：" class="headerlink" title="渲染性能："></a>渲染性能：</h2><pre><code>1.慎重使用高性能属性：浮动、定位；
+2.尽量减少页面重排、重绘；
+重排按照css的书写顺序：
+·位置：positon、top、left、z-index、float、dispay
+·大小：width、height、margin、padding
+·文字系列： font、line-height、color、letter-spacing
+·背景边框：background、 border
+·其它：anmation、transition
+*重绘:border、outline、background、box-shadow,能使用background-color,就尽量不要使用background;
+3.去除空规则：｛｝；
+4.属性值为0时，不加单位；
+5.属性值为浮动小数0.**，可以省略小数点之前的0；
+6.标准化各种浏览器前缀：带浏览器前缀的在前。标准属性在后；
+7.不使用@import前缀，它会影响css的加载速度；
+8.充分利用css继承属性，减少代码量；
+9.抽象提取公共样式，减少代码量；
+10.选择器优化嵌套，尽量避免层级过深；
+11.css雪碧图，同一页面相近部分的小图标，方便使用，减少页面的请求次数，但是同时图片本身会变大，使用时，优劣考虑清楚，再使用;
+12.将css文件放在页面最上面
+</code></pre><h2 id="可维护性、健壮性："><a href="#可维护性、健壮性：" class="headerlink" title="可维护性、健壮性："></a>可维护性、健壮性：</h2><pre><code>1.将具有相同属性的样式抽离出来，整合并通过class在页面中进行使用,提高css的可维护性；
+2.继上一条，oocss也是提高css性能的途径之一，通过定义可复用的、语义化良好的基础类，然后添加到html中，这也是很多ui框架都在使用的一种方法，例如：class=&quot;btn btn-active btn-blue&quot;；
+3.样式与内容分离：讲css代码定义到外部css中；
+4.容器与样式分离；
+</code></pre></li>
+<li><h3 id="网页字体应该使用奇数还是偶数？原因？"><a href="#网页字体应该使用奇数还是偶数？原因？" class="headerlink" title="网页字体应该使用奇数还是偶数？原因？"></a>网页字体应该使用奇数还是偶数？原因？</h3><pre><code>1.低版本的浏览器ie6会把奇数字体强制转化为偶数
+2.比例问题
+3.大多数设计师使用的软件，如ps提供的字号就是偶数的
+4.美观：比如12号的字体去掉一像素间距变11，文字的中竖线左右平分(比如 &quot;中&quot; 字)
+5.系统差别：windows自带点阵，从vista开始只提供偶数点阵，而奇数字体使用的是小一号的点阵，略显稀疏
+</code></pre></li>
+<li><h3 id="元素竖向的百分比是相对于容器的高度吗？"><a href="#元素竖向的百分比是相对于容器的高度吗？" class="headerlink" title="元素竖向的百分比是相对于容器的高度吗？"></a>元素竖向的百分比是相对于容器的高度吗？</h3><pre><code>当按百分比设定一个元素的宽度和高度时候，都是相对于父容器的宽度来设定的
+</code></pre></li>
+<li><h3 id="全屏滚动的原理是什么？用了css的哪些属性？"><a href="#全屏滚动的原理是什么？用了css的哪些属性？" class="headerlink" title="全屏滚动的原理是什么？用了css的哪些属性？"></a>全屏滚动的原理是什么？用了css的哪些属性？</h3><pre><code>外层包围块定义宽100%，overflow:hidden,内层包围块定义属性position：relative,滚动子块高度设置为屏幕高度，通过js改变内容包围块的top实现滚动
+</code></pre></li>
+<li><h3 id="什么是响应式设计？响应式设计的基本原理？如何兼容低版本？"><a href="#什么是响应式设计？响应式设计的基本原理？如何兼容低版本？" class="headerlink" title="什么是响应式设计？响应式设计的基本原理？如何兼容低版本？"></a>什么是响应式设计？响应式设计的基本原理？如何兼容低版本？</h3><pre><code>响应式设计是一个版本兼容多个设备终端（不是为每个终端做一个特定版本）——&gt;能根据用户设备环境进行调整。具体的实践有多方面组成，包括弹性布局和网格，图片以及css media query。
+响应式设计的基本原理是通过媒体查询检测不同的屏幕尺寸做处理，页面头部必须包含meta声明viewport：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale,user-scalable=no&quot;&gt;
+css hack兼容低版本，主要是ie兼容：
+&lt;!-- [if lt IE 7] --&gt;
+    &lt;html class=&quot;ie6&quot;&gt;
+&lt;![endif]--&gt;
+selector{
+    color:blue; /*正常浏览器识别blue*/
+    color:red/9; /*IE8识别red*/
+    *color:green; /*IE7识别green*/
+    _color:yellow; /*IE6识别yellow*/
+}
+gt : greater than ，高于某版本（不包含）
+lt : less than ，低于某版本（不包含）
+gte : greater than or equal ，高于某版本（包含）
+lte : less than or equal ，低于某版本（包含）
+&lt;!--[if !IE]&gt;&lt;!--&gt; 除IE外都可识别 &lt;!--&lt;![endif]--&gt;  
+&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;   
+&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;  
+&lt;!--[if lt IE 9]&gt; IE9以下版本可识别 &lt;![endif]--&gt;  
+&lt;!--[if gte IE 9]&gt; IE9以及IE9以上版本可识别 &lt;![endif]--&gt;
+</code></pre></li>
+<li><h3 id="css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？"><a href="#css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？" class="headerlink" title="css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？"></a>css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？</h3></li>
+<li><h3 id="如何修改-Chrome-记住密码后自动填充表单的黄色背景？"><a href="#如何修改-Chrome-记住密码后自动填充表单的黄色背景？" class="headerlink" title="如何修改 Chrome 记住密码后自动填充表单的黄色背景？"></a>如何修改 Chrome 记住密码后自动填充表单的黄色背景？</h3></li>
+<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）"></a>让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）</h3></li>
+<li><h3 id="介绍一下-Sass-和-Less-是什么？它们有何区别？"><a href="#介绍一下-Sass-和-Less-是什么？它们有何区别？" class="headerlink" title="介绍一下 Sass 和 Less 是什么？它们有何区别？"></a>介绍一下 Sass 和 Less 是什么？它们有何区别？</h3><pre><code>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，语法跟css一样(但多了些功能)，比css好写，而且更容易阅读。Sass语法类似与Haml，属于缩排语法（makeup），用意就是为了快速写Html和Css。
+Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。
+区别：
+(1))Sass是基于Ruby的，是在服务端处理的，而Less是需要引入less.js来处理Less代码输出Css到浏览器，也可以在开发环节使用Less，然后编译成Css文件，直接放到项目中，也有Less.app、SimpleLess、CodeKit.app这样的工具，也有在线编译地址。
+(2)变量符不一样，less是@，而Scss是$，而且变量的作用域也不一样，后面会讲到。
+(3)输出设置，Less没有输出设置，Sass提供4中输出选项：nested, compact, compressed 和 expanded。
+(4)Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。    
+</code></pre></li>
+<li><h3 id="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"><a href="#如果需要手动写动画，你认为最小时间间隔是多久？为什么？" class="headerlink" title="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"></a>如果需要手动写动画，你认为最小时间间隔是多久？为什么？</h3><pre><code>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小时间间隔为 1/6*1000ms = 16.7ms
+</code></pre></li>
+<li><h3 id="png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"><a href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？" class="headerlink" title="png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"></a>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？</h3></li>
+<li><h3 id="position-fixed-在-Android-下无效怎么处理？"><a href="#position-fixed-在-Android-下无效怎么处理？" class="headerlink" title="position: fixed; 在 Android 下无效怎么处理？"></a>position: fixed; 在 Android 下无效怎么处理？</h3></li>
+<li><h3 id="overflow-scroll-时不能平滑滚动的问题怎么处理？"><a href="#overflow-scroll-时不能平滑滚动的问题怎么处理？" class="headerlink" title="overflow: scroll 时不能平滑滚动的问题怎么处理？"></a>overflow: scroll 时不能平滑滚动的问题怎么处理？</h3></li>
+<li><h3 id="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"><a href="#三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式" class="headerlink" title="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"></a>三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式</h3></li>
+<li><p>###</p>
+</li>
+<li>###</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/04/css1/" data-id="cjlxlyqpw0000nabbz30cad69" class="article-share-link">Share</a>
       
       
     </footer>
@@ -279,134 +406,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjlxgcy510001fubbvklnudlr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-css1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/19/css1/" class="article-date">
-  <time datetime="2015-11-19T02:44:25.000Z" itemprop="datePublished">2015-11-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/19/css1/">CSS 题集2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol start="22">
-<li><h3 id="css优化方法？"><a href="#css优化方法？" class="headerlink" title="css优化方法？"></a>css优化方法？</h3><h2 id="加载性能："><a href="#加载性能：" class="headerlink" title="加载性能："></a>加载性能：</h2><pre><code>1.css压缩：将写好的css进行打包压缩，可以减少很多的体积；
-2.css单一样式：当需要下边距和左边距的时候，
-    很多时候选择：margin: top 0 bottom 0;
-    但 margin-bottom: bottom;margin-left: left;执行的效率更高；
-3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一起加载，前者 是等待页面加载完成之后再进行加载;
-</code></pre><h2 id="选择器性能："><a href="#选择器性能：" class="headerlink" title="选择器性能："></a>选择器性能：</h2><pre><code>1.CSS选择符是从右到左进行匹配的。当使用后代选择器的时候，浏览器会遍历所有子元素来确定是否是指定的元素等等；
-2.减少使用通配*规则:如*{} 计算次数惊人！只对需要用到的元素进行选择
-3.尽量少的去对标签进行选择，而是用class 如：#nav li{},可以为li加上nav_item的类名，如下选择.nav_item{}
-4.要去用标签限定ID或者类选择符。如：ul#nav,应该简化为#nav
-5.尽量少的去使用后代选择器，降低选择器的权重值
-6.后代选择器的开销是最高的，尽量将选择器的深度降到最低，最高不要超过三层，更多的使用类来关联每一个标签元素
-7.考虑继承：了解哪些属性是可以通过继承而来的，然后避免对这些属性重复指定规则
-</code></pre><h2 id="渲染性能："><a href="#渲染性能：" class="headerlink" title="渲染性能："></a>渲染性能：</h2><pre><code>1.慎重使用高性能属性：浮动、定位；
-2.尽量减少页面重排、重绘；
-重排按照css的书写顺序：
-·位置：positon、top、left、z-index、float、dispay
-·大小：width、height、margin、padding
-·文字系列： font、line-height、color、letter-spacing
-·背景边框：background、 border
-·其它：anmation、transition
-*重绘:border、outline、background、box-shadow,能使用background-color,就尽量不要使用background;
-3.去除空规则：｛｝；
-4.属性值为0时，不加单位；
-5.属性值为浮动小数0.**，可以省略小数点之前的0；
-6.标准化各种浏览器前缀：带浏览器前缀的在前。标准属性在后；
-7.不使用@import前缀，它会影响css的加载速度；
-8.充分利用css继承属性，减少代码量；
-9.抽象提取公共样式，减少代码量；
-10.选择器优化嵌套，尽量避免层级过深；
-11.css雪碧图，同一页面相近部分的小图标，方便使用，减少页面的请求次数，但是同时图片本身会变大，使用时，优劣考虑清楚，再使用;
-12.将css文件放在页面最上面
-</code></pre><h2 id="可维护性、健壮性："><a href="#可维护性、健壮性：" class="headerlink" title="可维护性、健壮性："></a>可维护性、健壮性：</h2><pre><code>1.将具有相同属性的样式抽离出来，整合并通过class在页面中进行使用,提高css的可维护性；
-2.继上一条，oocss也是提高css性能的途径之一，通过定义可复用的、语义化良好的基础类，然后添加到html中，这也是很多ui框架都在使用的一种方法，例如：class=&quot;btn btn-active btn-blue&quot;；
-3.样式与内容分离：讲css代码定义到外部css中；
-4.容器与样式分离；
-</code></pre></li>
-<li><h3 id="网页字体应该使用奇数还是偶数？原因？"><a href="#网页字体应该使用奇数还是偶数？原因？" class="headerlink" title="网页字体应该使用奇数还是偶数？原因？"></a>网页字体应该使用奇数还是偶数？原因？</h3><pre><code>1.低版本的浏览器ie6会把奇数字体强制转化为偶数
-2.比例问题
-3.大多数设计师使用的软件，如ps提供的字号就是偶数的
-4.美观：比如12号的字体去掉一像素间距变11，文字的中竖线左右平分(比如 &quot;中&quot; 字)
-5.系统差别：windows自带点阵，从vista开始只提供偶数点阵，而奇数字体使用的是小一号的点阵，略显稀疏
-</code></pre></li>
-<li><h3 id="元素竖向的百分比是相对于容器的高度吗？"><a href="#元素竖向的百分比是相对于容器的高度吗？" class="headerlink" title="元素竖向的百分比是相对于容器的高度吗？"></a>元素竖向的百分比是相对于容器的高度吗？</h3><pre><code>当按百分比设定一个元素的宽度和高度时候，都是相对于父容器的宽度来设定的
-</code></pre></li>
-<li><h3 id="全屏滚动的原理是什么？用了css的哪些属性？"><a href="#全屏滚动的原理是什么？用了css的哪些属性？" class="headerlink" title="全屏滚动的原理是什么？用了css的哪些属性？"></a>全屏滚动的原理是什么？用了css的哪些属性？</h3><pre><code>外层包围块定义宽100%，overflow:hidden,内层包围块定义属性position：relative,滚动子块高度设置为屏幕高度，通过js改变内容包围块的top实现滚动
-</code></pre></li>
-<li><h3 id="什么是响应式设计？响应式设计的基本原理？如何兼容低版本？"><a href="#什么是响应式设计？响应式设计的基本原理？如何兼容低版本？" class="headerlink" title="什么是响应式设计？响应式设计的基本原理？如何兼容低版本？"></a>什么是响应式设计？响应式设计的基本原理？如何兼容低版本？</h3><pre><code>响应式设计是一个版本兼容多个设备终端（不是为每个终端做一个特定版本）——&gt;能根据用户设备环境进行调整。具体的实践有多方面组成，包括弹性布局和网格，图片以及css media query。
-响应式设计的基本原理是通过媒体查询检测不同的屏幕尺寸做处理，页面头部必须包含meta声明viewport：
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale,user-scalable=no&quot;&gt;
-css hack兼容低版本，主要是ie兼容：
-&lt;!-- [if lt IE 7] --&gt;
-    &lt;html class=&quot;ie6&quot;&gt;
-&lt;![endif]--&gt;
-selector{
-    color:blue; /*正常浏览器识别blue*/
-    color:red/9; /*IE8识别red*/
-    *color:green; /*IE7识别green*/
-    _color:yellow; /*IE6识别yellow*/
-}
-gt : greater than ，高于某版本（不包含）
-lt : less than ，低于某版本（不包含）
-gte : greater than or equal ，高于某版本（包含）
-lte : less than or equal ，低于某版本（包含）
-&lt;!--[if !IE]&gt;&lt;!--&gt; 除IE外都可识别 &lt;!--&lt;![endif]--&gt;  
-&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;   
-&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;  
-&lt;!--[if lt IE 9]&gt; IE9以下版本可识别 &lt;![endif]--&gt;  
-&lt;!--[if gte IE 9]&gt; IE9以及IE9以上版本可识别 &lt;![endif]--&gt;
-</code></pre></li>
-<li><h3 id="css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？"><a href="#css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？" class="headerlink" title="css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？"></a>css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？</h3></li>
-<li><h3 id="如何修改-Chrome-记住密码后自动填充表单的黄色背景？"><a href="#如何修改-Chrome-记住密码后自动填充表单的黄色背景？" class="headerlink" title="如何修改 Chrome 记住密码后自动填充表单的黄色背景？"></a>如何修改 Chrome 记住密码后自动填充表单的黄色背景？</h3></li>
-<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）"></a>让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）</h3></li>
-<li><h3 id="介绍一下-Sass-和-Less-是什么？它们有何区别？"><a href="#介绍一下-Sass-和-Less-是什么？它们有何区别？" class="headerlink" title="介绍一下 Sass 和 Less 是什么？它们有何区别？"></a>介绍一下 Sass 和 Less 是什么？它们有何区别？</h3><pre><code>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，语法跟css一样(但多了些功能)，比css好写，而且更容易阅读。Sass语法类似与Haml，属于缩排语法（makeup），用意就是为了快速写Html和Css。
-Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。
-区别：
-(1))Sass是基于Ruby的，是在服务端处理的，而Less是需要引入less.js来处理Less代码输出Css到浏览器，也可以在开发环节使用Less，然后编译成Css文件，直接放到项目中，也有Less.app、SimpleLess、CodeKit.app这样的工具，也有在线编译地址。
-(2)变量符不一样，less是@，而Scss是$，而且变量的作用域也不一样，后面会讲到。
-(3)输出设置，Less没有输出设置，Sass提供4中输出选项：nested, compact, compressed 和 expanded。
-(4)Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。    
-</code></pre></li>
-<li><h3 id="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"><a href="#如果需要手动写动画，你认为最小时间间隔是多久？为什么？" class="headerlink" title="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"></a>如果需要手动写动画，你认为最小时间间隔是多久？为什么？</h3><pre><code>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小时间间隔为 1/6*1000ms = 16.7ms
-</code></pre></li>
-<li><h3 id="png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"><a href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？" class="headerlink" title="png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"></a>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？</h3></li>
-<li><h3 id="position-fixed-在-Android-下无效怎么处理？"><a href="#position-fixed-在-Android-下无效怎么处理？" class="headerlink" title="position: fixed; 在 Android 下无效怎么处理？"></a>position: fixed; 在 Android 下无效怎么处理？</h3></li>
-<li><h3 id="overflow-scroll-时不能平滑滚动的问题怎么处理？"><a href="#overflow-scroll-时不能平滑滚动的问题怎么处理？" class="headerlink" title="overflow: scroll 时不能平滑滚动的问题怎么处理？"></a>overflow: scroll 时不能平滑滚动的问题怎么处理？</h3></li>
-<li><h3 id="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"><a href="#三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式" class="headerlink" title="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"></a>三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式</h3></li>
-<li><p>###</p>
-</li>
-<li>###</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css1/" data-id="cjlxgcy560004fubbxlnnpo2h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjlxlyqq20004nabbke9y2ruw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +434,7 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li></ul>
     </div>
   </div>
 
@@ -447,15 +447,15 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
       <ul>
         
           <li>
-            <a href="/2018/08/07/test/">test</a>
+            <a href="/2017/04/05/js0/">js0.md</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/04/css1/">CSS 题集2</a>
           </li>
         
           <li>
             <a href="/2015/11/19/css0/">CSS 题集1</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/19/css1/">CSS 题集2</a>
           </li>
         
       </ul>
