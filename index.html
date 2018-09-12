@@ -84,11 +84,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li><h3 id="能改变this指向的方式有哪些？"><a href="#能改变this指向的方式有哪些？" class="headerlink" title="能改变this指向的方式有哪些？"></a>能改变this指向的方式有哪些？</h3><pre><code>new 一个对象时候是的this指向new 出来的实例对象，call和apply改变调用对象，bind绑定到某个对象，箭头函数
+&lt;!-- 直接调用，就是通过 函数名(...) 这种方式调用。这时候，函数内部的 this 指向全局对象，在浏览器中全局对象是 window，在 NodeJs 中全局对象是 global。 --&gt;
+&lt;!-- 在 es5 中，用 new 调用一个构造函数，会创建一个新对象，而其中的 this 就指向这个新对象 --&gt;
+&lt;!-- apply方法让我们构建一个参数数组传递给调用函数。它也允许我们选择this的值。apply方法接受两个参数，第一个是要绑定给this的值，第二个就是一个参数数组 --&gt;
+&lt;!-- Function.prototype.bind() 的作用是将当前函数与指定的对象绑定，并返回一个新函数，这个新函数无论以什么样的方式调用，其 this 始终指向绑定的对象 --&gt;
+&lt;!-- 箭头函数没有自己的 this 绑定。箭头函数中使用的 this，其实是直接包含它的那个函数或函数表达式中的 this --&gt;
+</code></pre></li>
+<li><h3 id="this的指向问题？-不考虑严格模式"><a href="#this的指向问题？-不考虑严格模式" class="headerlink" title="this的指向问题？(不考虑严格模式)"></a>this的指向问题？(不考虑严格模式)</h3><pre><code>（1）直接调用：
+var a=1;
+function test(){
+    console.log(this===window);
+    console.log(this.a);
+}
+test(); 
+// true 
+//1
+
+（2）方法调用（作为对象的方法调用）
+var a=10;
+var obj={a:11};
+function test(){
+    console.log(this===obj);
+    console.log(this.a);
+}
+obj.func=test;
+obj.func();
+//true
+//11
+
+（3）作为构造函数使用
+var a=14;
+function test(){
+    this.a=12;
+    console.log(this.a);
+}
+var newobj=new test();
+console.log(newobj.a)
+//12
+//12
+
+(4)apply调用
+var obj={
+    a:20,
+    test:function(){
+        console.log(this.a);
+    }
+};
+var a=15;
+obj.test.apply();//默认为window对象
+obj.test.apply(obj);
+//15
+//20
+
+(5)
+</code></pre></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjlxm66z30004qibb1688im6u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjlz18rdg0004whbbqxmzadv7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +272,7 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjlxm66z10002qibbugq1mn0j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjlz18rde0003whbbtslnfrt6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +463,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjlxm66yx0000qibbc1aghir0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjlz18rda0001whbb3290fqnx" class="article-share-link">Share</a>
       
       
     </footer>
