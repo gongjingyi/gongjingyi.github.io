@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/05/js0/">js0.md</a>
+      <a class="article-title" href="/2017/04/05/js0/">JS相关问题1</a>
     </h1>
   
 
@@ -125,7 +125,7 @@ console.log(newobj.a)
 //12
 //12
 
-(4)apply调用
+(4)apply,call调用
 var obj={
     a:20,
     test:function(){
@@ -138,14 +138,48 @@ obj.test.apply(obj);
 //15
 //20
 
-(5)
+(5)箭头函数
+</code></pre></li>
+<li><h3 id="怎么判断一个object是否是数组-array-？"><a href="#怎么判断一个object是否是数组-array-？" class="headerlink" title="怎么判断一个object是否是数组(array)？"></a>怎么判断一个object是否是数组(array)？</h3><pre><code>方法一：使用call来使 toString 中 this 指向 obj。进而完成判断
+function isArray(obj){
+    return Object.prototype.toString.call( obj ) === &apos;[object Array]&apos;;
+}
+&lt;!-- Object.prototype.toString.call(o).slice(8,-1);         --&gt;
+方法二：实例如果是某个构造函数构造出来的那么 它的 __proto__是指向构造函数的 prototype属性。
+obj.__proto__ === Array.prototype;
+function isArray(obj){
+    return Object.prototype.toString.call( obj ) === &apos;[object Array]&apos;;
+}
+方法三：利用JQuery原理利用方法一
+function isArray(obj){
+    return $.isArray(obj)
+}
+</code></pre></li>
+<li><h3 id="不同类型相加计算依据？"><a href="#不同类型相加计算依据？" class="headerlink" title="不同类型相加计算依据？"></a>不同类型相加计算依据？</h3><pre><code>数字和字符串 转换为字符串计算
+布尔和字符串 转换为字符串计算
+布尔和布尔 转换为数字计算
+布尔和数字 转换为数字计算
+</code></pre></li>
+<li><h3 id="下面代码输出什么？"><a href="#下面代码输出什么？" class="headerlink" title="下面代码输出什么？"></a>下面代码输出什么？</h3><pre><code>var z = 1, y = z = typeof y;
+console.log(y);
+&lt;!-- 输出是 undefined。js中赋值操作结合律是右至左的 ，即从最右边开始计算值赋值给左边的变量。         --&gt;
+以上赋值语句相当于：
+var z = 1
+z = typeof y;
+var y = z;
+console.log(y); 
+</code></pre></li>
+<li><h3 id="let的使用？"><a href="#let的使用？" class="headerlink" title="let的使用？"></a>let的使用？</h3><pre><code>只在代码块内有效（块级作用域）
+不存在变量提升（声明前引用会报错）
+暂时性死区（只要块级作用域内存在let命令，则它所声明的变量就绑定在这个区域，不受外界影响）
+不允许重复声明
 </code></pre></li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjlz18rdg0004whbbqxmzadv7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjrivetlk00044nbb4szmsng9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,7 +306,7 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjlz18rde0003whbbtslnfrt6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjrivetli00024nbbj83kmmuj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -463,7 +497,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjlz18rda0001whbb3290fqnx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjrivetl400004nbbdlftu1oq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -504,7 +538,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       <ul>
         
           <li>
-            <a href="/2017/04/05/js0/">js0.md</a>
+            <a href="/2017/04/05/js0/">JS相关问题1</a>
           </li>
         
           <li>
@@ -527,7 +561,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2019 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
