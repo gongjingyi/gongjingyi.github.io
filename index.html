@@ -174,12 +174,49 @@ console.log(y);
 暂时性死区（只要块级作用域内存在let命令，则它所声明的变量就绑定在这个区域，不受外界影响）
 不允许重复声明
 </code></pre></li>
+<li><h3 id="ES6知识点集合？"><a href="#ES6知识点集合？" class="headerlink" title="ES6知识点集合？"></a>ES6知识点集合？</h3><pre><code>(1)变量的解构赋值，本质上是模式的匹配
+var { bar, foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };等价于如下：
+var { bar:bar, foo:foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
+解构赋值对提取JSON中数据很有用如下：
+var jsonData = {id: 42,status: &quot;OK&quot;,data: [867, 5309]};
+let { id, status, data: number } = jsonData;
+
+(2)获取字符串中指定位置的字符
+ES5中有&quot;abc&quot;.charAt(0)  // &quot;a&quot; (对于码点大于0xFFFF的字符该方法不能识别) &apos;𠮷&apos;.charAt(0) // &quot;\uD842&quot;
+ES6提供了at()方法来解决这个问题 &apos;abc&apos;.at(0) // &quot;a&quot; &apos;𠮷&apos;.at(0) // &quot;𠮷&quot;
+
+(3)ES6以前，JS只有indexOf()方法判断一个字符串是否包含在另一个字符串中,ES6又提供了如下三个方法：
+includes() //返回布尔值，是否找到了参数字符串
+startsWith() //返回布尔值，参数是否在源字符串头部
+endsWith() //返回布尔值，参数是否在源字符串尾部
+
+(4)repeat方法返回一个新字符串，表示将原字符串重复n次。&quot;abc&quot;.repeat(n) //将字符串&quot;abc&quot;重复n次返回
+
+(5)ES6引入了模板语法`` ，使得不再考虑手动添加单双引号的的问题（会保留字符串中的空格和换行），如果不想保留可使用trim().
+模板字符串中嵌入变量，需要将变量名写在${}之中.
+
+(6)字符串对象共有4个方法，可以使用正则表达式：match()、replace()、search()和split()。
+
+(7) let ps = document.querySelectorAll(&apos;p&apos;);
+    Array.from(ps).forEach(function (p) {console.log(p);});
+    //上面代码中，querySelectorAll方法返回的是一个类似数组的对象，只有将这个对象转为真正的数组，才能使用forEach方法。
+
+(8)ES6数组方法find()和findIndex()接受回调
+[1,3,4,555,666].find(function(value, index, arr) {return value &gt; 9;}) //存在则，返回第一个匹配的成员。否则，返回undefined
+[1,3,4,555,666].findIndex(function(value, index, arr) {return value &gt; 9;}) //存在则，返回第一个匹配成员的位置下标。否则，返回-1
+
+(9)ES6函数增加了默认参数赋值
+
+(10)扩展运算符（spread）是三个点（...）,将数组序列化
+
+(11)
+</code></pre></li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjrivetlk00044nbb4szmsng9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjrn6eyn30002avbb1vwblb53" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +343,7 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjrivetli00024nbbj83kmmuj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjrn6eyn10001avbb2gssm430" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,7 +534,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjrivetl400004nbbdlftu1oq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjrn6eymz0000avbb1jwi6r0i" class="article-share-link">Share</a>
       
       
     </footer>
