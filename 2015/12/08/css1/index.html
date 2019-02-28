@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="css优化方法？加载性能：1.css压缩：将写好的css进行打包压缩，可以减少很多的体积； 2.css单一样式：当需要下边距和左边距的时候，     很多时候选择：margin: top 0 bottom 0;     但 margin-bottom: bottom;margin-left: left;执行的效率更高； 3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-28T09:10:43.664Z">
+<meta property="og:updated_time" content="2019-02-28T13:16:51.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 题集2">
 <meta name="twitter:description" content="css优化方法？加载性能：1.css压缩：将写好的css进行打包压缩，可以减少很多的体积； 2.css单一样式：当需要下边距和左边距的时候，     很多时候选择：margin: top 0 bottom 0;     但 margin-bottom: bottom;margin-left: left;执行的效率更高； 3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一">
@@ -163,8 +163,8 @@ lte : less than or equal ，低于某版本（包含）
 <li><h3 id="如何修改-Chrome-记住密码后自动填充表单的黄色背景？"><a href="#如何修改-Chrome-记住密码后自动填充表单的黄色背景？" class="headerlink" title="如何修改 Chrome 记住密码后自动填充表单的黄色背景？"></a>如何修改 Chrome 记住密码后自动填充表单的黄色背景？</h3><pre><code>input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px rgba(143,143,143,0.5) inset; }
 如果你有使用圆角等属性，或者发现输入框的长度高度不太对，可以对其进行调整，除了chrome默认定义的background-color，background-image，color不能用!important提升其优先级以外，其他的属性均可使用!important提升其优先级
 </code></pre></li>
-<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？"></a>让页面里的字体变清晰、变细用 CSS 怎么做？</h3><p>（-webkit-font-smoothing: antialiased;）Windows下不起作用，ios下叫灰度平滑</p>
-</li>
+<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？"></a>让页面里的字体变清晰、变细用 CSS 怎么做？</h3><pre><code>（-webkit-font-smoothing: antialiased;）Windows下不起作用，ios下叫灰度平滑
+</code></pre></li>
 <li><h3 id="介绍一下-Sass-和-Less-是什么？它们有何区别？"><a href="#介绍一下-Sass-和-Less-是什么？它们有何区别？" class="headerlink" title="介绍一下 Sass 和 Less 是什么？它们有何区别？"></a>介绍一下 Sass 和 Less 是什么？它们有何区别？</h3><pre><code>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，语法跟css一样(但多了些功能)，比css好写，而且更容易阅读。Sass语法类似与Haml，属于缩排语法（makeup），用意就是为了快速写Html和Css。
 Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。
 区别：
@@ -175,19 +175,37 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
 </code></pre></li>
 <li><h3 id="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"><a href="#如果需要手动写动画，你认为最小时间间隔是多久？为什么？" class="headerlink" title="如果需要手动写动画，你认为最小时间间隔是多久？为什么？"></a>如果需要手动写动画，你认为最小时间间隔是多久？为什么？</h3><pre><code>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小时间间隔为 1/6*1000ms = 16.7ms
 </code></pre></li>
-<li><h3 id="png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"><a href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？" class="headerlink" title="png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"></a>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？</h3></li>
-<li><h3 id="position-fixed-在-Android-下无效怎么处理？"><a href="#position-fixed-在-Android-下无效怎么处理？" class="headerlink" title="position: fixed; 在 Android 下无效怎么处理？"></a>position: fixed; 在 Android 下无效怎么处理？</h3></li>
-<li><h3 id="overflow-scroll-时不能平滑滚动的问题怎么处理？"><a href="#overflow-scroll-时不能平滑滚动的问题怎么处理？" class="headerlink" title="overflow: scroll 时不能平滑滚动的问题怎么处理？"></a>overflow: scroll 时不能平滑滚动的问题怎么处理？</h3></li>
-<li><h3 id="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"><a href="#三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式" class="headerlink" title="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"></a>三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式</h3></li>
-<li><p>###</p>
-</li>
+<li><h3 id="png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"><a href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？" class="headerlink" title="png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？"></a>png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp、jpg-large？</h3><pre><code>png 非矢量 支持透明 色彩丰富 支持无损压缩 不支持动画
+jpg 非矢量 不支持透明 色彩丰富     有损压缩  不支持动画 ，相对于png较为轻量，所以广告图特大背景图一般使用jpg
+gif 非矢量 支持透明 色彩不丰富 支持动画
+webp 体积小,新版本支持无损压缩 兼容性不太好, 只有opera,和chrome支持;
+svg 矢量，支持样式修改，一般ICON使用svg IE8及以下不支持，其余基本支持
+</code></pre></li>
+<li><h3 id="position-fixed-在-Android-下无效怎么处理？"><a href="#position-fixed-在-Android-下无效怎么处理？" class="headerlink" title="position: fixed; 在 Android 下无效怎么处理？"></a>position: fixed; 在 Android 下无效怎么处理？</h3><pre><code>在网页代码头部引入如下meta标签内容:
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot;/&gt;    
+</code></pre></li>
+<li><h3 id="overflow-scroll-时不能平滑滚动的问题怎么处理？"><a href="#overflow-scroll-时不能平滑滚动的问题怎么处理？" class="headerlink" title="overflow: scroll 时不能平滑滚动的问题怎么处理？"></a>overflow: scroll 时不能平滑滚动的问题怎么处理？</h3><pre><code>-webkit-overflow-scrolling: touch; 启动硬件加速特性。
+但是有一个bug:会导致使用固定定位的元素，随着页面一起滚动。 fix bug: 把固定元素不放在可滚动区域，在外层在加一层。
+</code></pre></li>
+<li><h3 id="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"><a href="#三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式" class="headerlink" title="三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式"></a>三列布局，将屏幕分成三列，左右两列宽度固定，中间自适应？实现方式</h3><pre><code> 方法一浮动布局：左边——》width：100px;float:left;右边——》width:100px;float:rigth;中间写个背景色就好了
+方法二绝对定位：外容器相对定位，左边——》width:100px;position:absolute;left:0;右边——》width:100px;position:absolut;right:0;中间——》position:absolute;left:100px;right:100px;
+方法三：flex布局：外容器display:flex;左边——》width:100px;flex: 0 0 100px;右边——》width:100px;flex: 0 0 100px;中间——》flex:1;
+方法四：table布局：外容器display:table;内容器均设置为display:table-cell;左边——》width:100px;右边——》width:100px;中间——》给个背景色
+</code></pre></li>
+<li><h3 id="怎样形成一个BFC？"><a href="#怎样形成一个BFC？" class="headerlink" title="怎样形成一个BFC？"></a>怎样形成一个BFC？</h3><pre><code>块级格式化上下文由以下之一创建：
+(1)根元素或其它包含它的元素
+(2)浮动 (元素的 float 不是 none)
+(3)绝对定位的元素 (元素具有 position 为 absolute 或 fixed)
+(4)元素具有 display: inline-block，table-cell, table-caption, flex, inline-flex
+(5)块元素具有overflow ，且值不是 visible
+</code></pre></li>
 <li>###</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjsejcot100015ibbkm4ex2ll" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjsoetf5c0004q8bbynrwc4g8" class="article-share-link">Share</a>
       
       
     </footer>
