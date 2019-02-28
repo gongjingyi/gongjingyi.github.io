@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="什么是css盒模型？盒模型的种类？css盒模型规定了元素处理元素内容（content），边框（border），内外边距(padding,margin)的方式 盒模型有IE盒子模型和标准W3C盒子模型。 box-sizing:border-box;    //IE盒模型，包括content border padding 的值 box-sizing:content-box; //标准和模型，只有co">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-09T09:17:19.312Z">
+<meta property="og:updated_time" content="2019-02-21T11:20:17.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 题集1">
 <meta name="twitter:description" content="什么是css盒模型？盒模型的种类？css盒模型规定了元素处理元素内容（content），边框（border），内外边距(padding,margin)的方式 盒模型有IE盒子模型和标准W3C盒子模型。 box-sizing:border-box;    //IE盒模型，包括content border padding 的值 box-sizing:content-box; //标准和模型，只有co">
@@ -92,6 +92,10 @@
 box-sizing:border-box;    //IE盒模型，包括content border padding 的值
 box-sizing:content-box; //标准和模型，只有content
 box-sizing:inherit; //从父元素继承盒模型方式
+js可以通过哪些方式获取盒模型的宽高，如下：
+dom.style.width/height——》ps:这个只能获取内联样式的宽高
+dom.cuurrentStyle.width/hight——》ps:这个只有IE支持
+window.getComputedStyle(dom).width/height——》ps:这个所有浏览器都支持
 </code></pre></li>
 <li><h3 id="css选择符有哪些？哪些可以继承？哪些不可以继承？"><a href="#css选择符有哪些？哪些可以继承？哪些不可以继承？" class="headerlink" title="css选择符有哪些？哪些可以继承？哪些不可以继承？"></a>css选择符有哪些？哪些可以继承？哪些不可以继承？</h3><pre><code>选择符有：id(#elementid),类(.classname),标签（div,hi,p,span,table）,相邻（h1+p）,子选择器（ul&gt;li）,后代（li a）,通配符（*），属性（a[rel=&quot;external&quot;]）,伪类（a:hover,li:nth-child(n)）
 可继承：font-size,font-family,color
@@ -245,7 +249,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjrn6eymz0000avbb1jwi6r0i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjsejcoss00005ibbr4kgacl2" class="article-share-link">Share</a>
       
       
     </footer>

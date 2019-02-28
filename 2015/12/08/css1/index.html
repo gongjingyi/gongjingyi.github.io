@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="css优化方法？加载性能：1.css压缩：将写好的css进行打包压缩，可以减少很多的体积； 2.css单一样式：当需要下边距和左边距的时候，     很多时候选择：margin: top 0 bottom 0;     但 margin-bottom: bottom;margin-left: left;执行的效率更高； 3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-11T11:06:33.335Z">
+<meta property="og:updated_time" content="2019-02-28T09:10:43.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 题集2">
 <meta name="twitter:description" content="css优化方法？加载性能：1.css压缩：将写好的css进行打包压缩，可以减少很多的体积； 2.css单一样式：当需要下边距和左边距的时候，     很多时候选择：margin: top 0 bottom 0;     但 margin-bottom: bottom;margin-left: left;执行的效率更高； 3.减少使用 @import, 而建议使用link, 因为后者在页面加载时一">
@@ -156,9 +156,15 @@ lte : less than or equal ，低于某版本（包含）
 &lt;!--[if lt IE 9]&gt; IE9以下版本可识别 &lt;![endif]--&gt;  
 &lt;!--[if gte IE 9]&gt; IE9以及IE9以上版本可识别 &lt;![endif]--&gt;
 </code></pre></li>
-<li><h3 id="css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？"><a href="#css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？" class="headerlink" title="css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？"></a>css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？</h3></li>
-<li><h3 id="如何修改-Chrome-记住密码后自动填充表单的黄色背景？"><a href="#如何修改-Chrome-记住密码后自动填充表单的黄色背景？" class="headerlink" title="如何修改 Chrome 记住密码后自动填充表单的黄色背景？"></a>如何修改 Chrome 记住密码后自动填充表单的黄色背景？</h3></li>
-<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？（-webkit-font-smoothing-antialiased-）" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）"></a>让页面里的字体变清晰、变细用 CSS 怎么做？（-webkit-font-smoothing: antialiased;）</h3></li>
+<li><h3 id="css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？"><a href="#css-伪类和伪元素的区别？-before-和-after-中双冒号和单冒号有什么区别？" class="headerlink" title="css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？"></a>css 伪类和伪元素的区别？::before 和 :after 中双冒号和单冒号有什么区别？</h3><pre><code>css3规定单冒号表示伪类，双冒号表示伪元素；伪类的效果可以通过添加一个实际的类达到，伪元素的效果则需要通过添加一个实际的元素才能达到，两者都是为了修饰文档树以外的部分。
+::after ::before ::first-letter ::first-line ::selection ::placeholder ::backdrop(PS:后三个伪元素仅支持双冒号) 这些书属于伪元素，其他事属于伪类。
+::before 和 :after 中双冒号和单冒号表示的含义是一样的，css3为了区分伪元素和伪类，规定伪元素使用双冒号，伪类使用单冒号。但是对于单冒号的伪元素现代浏览器仍然支持，为了向后兼容，把单冒号的伪元素也写上。
+</code></pre></li>
+<li><h3 id="如何修改-Chrome-记住密码后自动填充表单的黄色背景？"><a href="#如何修改-Chrome-记住密码后自动填充表单的黄色背景？" class="headerlink" title="如何修改 Chrome 记住密码后自动填充表单的黄色背景？"></a>如何修改 Chrome 记住密码后自动填充表单的黄色背景？</h3><pre><code>input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px rgba(143,143,143,0.5) inset; }
+如果你有使用圆角等属性，或者发现输入框的长度高度不太对，可以对其进行调整，除了chrome默认定义的background-color，background-image，color不能用!important提升其优先级以外，其他的属性均可使用!important提升其优先级
+</code></pre></li>
+<li><h3 id="让页面里的字体变清晰、变细用-CSS-怎么做？"><a href="#让页面里的字体变清晰、变细用-CSS-怎么做？" class="headerlink" title="让页面里的字体变清晰、变细用 CSS 怎么做？"></a>让页面里的字体变清晰、变细用 CSS 怎么做？</h3><p>（-webkit-font-smoothing: antialiased;）Windows下不起作用，ios下叫灰度平滑</p>
+</li>
 <li><h3 id="介绍一下-Sass-和-Less-是什么？它们有何区别？"><a href="#介绍一下-Sass-和-Less-是什么？它们有何区别？" class="headerlink" title="介绍一下 Sass 和 Less 是什么？它们有何区别？"></a>介绍一下 Sass 和 Less 是什么？它们有何区别？</h3><pre><code>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，语法跟css一样(但多了些功能)，比css好写，而且更容易阅读。Sass语法类似与Haml，属于缩排语法（makeup），用意就是为了快速写Html和Css。
 Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。
 区别：
@@ -181,7 +187,7 @@ Less一种动态样式语言. 将CSS赋予了动态语言的特性，如变量�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjrn6eyn10001avbb2gssm430" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/08/css1/" data-id="cjsejcot100015ibbkm4ex2ll" class="article-share-link">Share</a>
       
       
     </footer>

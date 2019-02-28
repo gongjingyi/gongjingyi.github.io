@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="能改变this指向的方式有哪些？new 一个对象时候是的this指向new 出来的实例对象，call和apply改变调用对象，bind绑定到某个对象，箭头函数 &amp;lt;!-- 直接调用，就是通过 函数名(...) 这种方式调用。这时候，函数内部的 this 指向全局对象，在浏览器中全局对象是 window，在 NodeJs 中全局对象是 global。 --&amp;gt; &amp;lt;!-- 在 es5">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-02T07:47:19.334Z">
+<meta property="og:updated_time" content="2019-02-28T07:55:40.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS相关问题1">
 <meta name="twitter:description" content="能改变this指向的方式有哪些？new 一个对象时候是的this指向new 出来的实例对象，call和apply改变调用对象，bind绑定到某个对象，箭头函数 &amp;lt;!-- 直接调用，就是通过 函数名(...) 这种方式调用。这时候，函数内部的 this 指向全局对象，在浏览器中全局对象是 window，在 NodeJs 中全局对象是 global。 --&amp;gt; &amp;lt;!-- 在 es5">
@@ -176,6 +176,9 @@ console.log(y);
 暂时性死区（只要块级作用域内存在let命令，则它所声明的变量就绑定在这个区域，不受外界影响）
 不允许重复声明
 </code></pre></li>
+<li><h3 id="HTTP协议？"><a href="#HTTP协议？" class="headerlink" title="HTTP协议？"></a>HTTP协议？</h3></li>
+</ol>
+<ol start="8">
 <li><h3 id="ES6知识点集合？"><a href="#ES6知识点集合？" class="headerlink" title="ES6知识点集合？"></a>ES6知识点集合？</h3><pre><code>(1)变量的解构赋值，本质上是模式的匹配
 var { bar, foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };等价于如下：
 var { bar:bar, foo:foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
@@ -211,14 +214,15 @@ endsWith() //返回布尔值，参数是否在源字符串尾部
 
 (10)扩展运算符（spread）是三个点（...）,将数组序列化
 
-(11)
+(11)ES6的几种数据类型 Undefined Null Boolean String Number Objectb Symbol Set Map
+(PS:原始数据类型，非对象。)
 </code></pre></li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjrn6eyn30002avbb1vwblb53" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/05/js0/" data-id="cjsejcot200035ibbs50h3eoq" class="article-share-link">Share</a>
       
       
     </footer>
