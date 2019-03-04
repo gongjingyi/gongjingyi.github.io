@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="什么是css盒模型？盒模型的种类？css盒模型规定了元素处理元素内容（content），边框（border），内外边距(padding,margin)的方式 盒模型有IE盒子模型和标准W3C盒子模型。 box-sizing:border-box;    //IE盒模型，包括content border padding 的值 box-sizing:content-box; //标准和模型，只有co">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-21T11:20:17.557Z">
+<meta property="og:updated_time" content="2019-03-04T09:03:15.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 题集1">
 <meta name="twitter:description" content="什么是css盒模型？盒模型的种类？css盒模型规定了元素处理元素内容（content），边框（border），内外边距(padding,margin)的方式 盒模型有IE盒子模型和标准W3C盒子模型。 box-sizing:border-box;    //IE盒模型，包括content border padding 的值 box-sizing:content-box; //标准和模型，只有co">
@@ -98,8 +98,12 @@ dom.cuurrentStyle.width/hight——》ps:这个只有IE支持
 window.getComputedStyle(dom).width/height——》ps:这个所有浏览器都支持
 </code></pre></li>
 <li><h3 id="css选择符有哪些？哪些可以继承？哪些不可以继承？"><a href="#css选择符有哪些？哪些可以继承？哪些不可以继承？" class="headerlink" title="css选择符有哪些？哪些可以继承？哪些不可以继承？"></a>css选择符有哪些？哪些可以继承？哪些不可以继承？</h3><pre><code>选择符有：id(#elementid),类(.classname),标签（div,hi,p,span,table）,相邻（h1+p）,子选择器（ul&gt;li）,后代（li a）,通配符（*），属性（a[rel=&quot;external&quot;]）,伪类（a:hover,li:nth-child(n)）
-可继承：font-size,font-family,color
-不可继承：border,padding,margin,width,height
+所有元素可继承：visibility和cursor。
+内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、 font-family、font-size、font-style、font-variant、font-weight、text- decoration、text-transform、direction。
+块状元素可继承：text-indent和text-align。
+列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。
+表格元素可继承：border-collapse。
+不可继承：border,padding,margin,width,height,display,position.left,top,right,bottom,overflow,background
 </code></pre></li>
 <li><h3 id="css如何计算优先级？"><a href="#css如何计算优先级？" class="headerlink" title="css如何计算优先级？"></a>css如何计算优先级？</h3><pre><code>就近原则，同权重情况下以样式定义最近者为准；载入样式以最后载入的定位为准；
 !important &gt; id &gt; class &gt; tag
@@ -124,22 +128,26 @@ p:nth-child(2)  选择属于其父元素的第二个子元素的每个p元素
 &lt;3&gt;块水平居中，垂直居中：
 ①块宽固定——定义宽度，margin: 0 auto；定义margin-top距离容器顶部1/2
 ②使用绝对定位 transform:translate(-50%,-50%)；left:50%; top:50%;
-&lt;4&gt;div模拟表格效果：父块设置display:table；字块设置display:table-cell；同时vertical-
+&lt;4&gt;div模拟表格效果：父块设置display:table；子块设置display:table-cell；同时vertical-
 align:middle;
 &lt;5&gt;.parent{position:relative}
 .child{margin:auto;height: 100px;width: 100px;position: absolute;top: 0; left: 0; 
 bottom: 0; right: 0;}
 &lt;6&gt;弹性布局（flex）：justify-content:center 水平方向 align-items:center;垂直方向
+弹性布局的容器和项目上的属性如下:
+容器上属性——》flex-direction    flex-wrap    flex-flow    justify-content    align-items    align-content
+项目上属性——》order    flex-grow    flex-shrink    flex-basis    flex    align-self
 </code></pre></li>
 <li><h3 id="src和href的区别？"><a href="#src和href的区别？" class="headerlink" title="src和href的区别？"></a>src和href的区别？</h3><pre><code>href表示超文本引用，用来建立当前元素和文档之间的链接。常用的有link ，a。
 例如:&lt;link href=&quot;reset.css&quot; rel=&quot;stylesheet&quot;/&gt;浏览器会识别该文档为css文档，并下载该文档
-，且不会停止对当前文档的处理，也是建议使用link，而不是@inport的原因
+，且不会停止对当前文档的处理，也是建议使用link，而不是@import的原因
 src是source的缩写，src指向的内容会嵌入到标签所在的位置。常用的有img，script，iframe。当
-浏览器解析到该元素时会暂停浏览器的渲染，知道该资源解析完毕。
+浏览器解析到该元素时会暂停浏览器的渲染，直到该资源解析完毕。
 @import和link区别：
-@import 为CSS服务；link是为当前的页服务
-@import是css2.1提出的，老浏览器不兼容。link无此问题
-使用js控制dom样式时，只能使用link标签
+区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。
+区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。
+区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。
+区别4：ink支持使用Javascript控制DOM去改变样式；而@import不支持。
 </code></pre></li>
 <li><h3 id="什么是css-hack"><a href="#什么是css-hack" class="headerlink" title="什么是css hack?"></a>什么是css hack?</h3><pre><code>解决针对不同浏览器或者同一浏览器不同版本的样式显示的css code为css hack。
 css 内部hack，选择器hack，html头部hack。
@@ -249,7 +257,7 @@ Firefox下,只能使用getAttribute()获取自定义属性；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjsqzkpgz00031zbba8aeb885" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/19/css0/" data-id="cjsqzmjis00003cbbjxbipk92" class="article-share-link">Share</a>
       
       
     </footer>
